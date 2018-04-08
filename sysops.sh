@@ -8,4 +8,10 @@ find /var/mqm/errors -name "AMQ*.FDC" -mtime +60 -exec rm -f "{}" \; #exec comma
 #Find older than 60 days files
 find /var/mqm/errors -name "AMQ*.FDC" -mtime +60
 
+#Find duplicates files with same name but different case
+find . | sort -f | uniq -di
+
+#Find difference of files between 2 directories directory
+diff --brief -Nr  $1 $2  > result.txt
+
 
