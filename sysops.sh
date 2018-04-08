@@ -12,6 +12,6 @@ find /var/mqm/errors -name "AMQ*.FDC" -mtime +60
 find . | sort -f | uniq -di
 
 #Find difference of files between 2 directories directory
-diff --brief -Nr  $1 $2  > result.txt
+diff --brief -qr  $1 $2  > result.txt
 
 
